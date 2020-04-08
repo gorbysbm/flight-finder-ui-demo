@@ -26,11 +26,10 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTests {
     private static final Logger LOGGER = Logger.getLogger(BaseTests.class);
-    Path PROJECT_ROOT = FileSystems.getDefault().getPath("../uiauto.project").toAbsolutePath();
+    Path PROJECT_ROOT = FileSystems.getDefault().getPath("").toAbsolutePath();
     private static DesiredCapabilities capabilities = new DesiredCapabilities();
     private static String browserName;
     private static boolean isDocker;
-    private int implicitWait = 0;
     private int pageLoadTimeOut = 45;
 
 
@@ -66,7 +65,6 @@ public abstract class BaseTests {
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(pageLoadTimeOut, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(implicitWait, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         LocalDriverManager.setWebDriver(driver);
     }

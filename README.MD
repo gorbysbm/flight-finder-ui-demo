@@ -1,23 +1,8 @@
-## Installing and Running on Mac OSX instructions
+## Running locally on Mac OSX instructions
 
-
-* install ```brew``` if not present:
-
-```
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
- 
-* install ```chromedriver``` 
-
-```
-        brew tap homebrew/cask && brew cask install chromedriver
-```
-
-### Running the Tests: 
-
-* navigate to this project's root directory and run this command while specifying the `testSuite` file: 
+* run this command while specifying the `testSuite` file: 
 ``` 
-        gradlew clean test -PtestSuiteFile=testng-functional.xml
+         gradlew clean prebuild test -PtestSuiteFile=testng-functional.xml
 ```
 NOTE: You can see detailed test reports at: ```${projectDir}/build/tesngOutput```
 
@@ -38,7 +23,7 @@ NOTE: You can see detailed test reports at: ```${projectDir}/build/tesngOutput``
   docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm -e VNC_NO_PASSWORD=1 selenium/standalone-chrome-debug:latest
 ```
 
-* navigate to this project's root directory and run: 
+*  run: 
 ``` 
         gradlew clean test -PtestSuiteFile=testng-functional-docker.xml
 ```

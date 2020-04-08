@@ -33,7 +33,7 @@ public class FlightBookingConfirmationPage extends BasePage {
         String actualDepartingFlightMessage = getVisibleElement(By.xpath((txtDepartingFlightInfo))).getText()
                 .replace("\n"," ");
         String expectedDepartingFlightMessage= departureCity +" to " + arrivalCity +" "
-                + StringUtilities.getFormattedDate("M/dd/yyyy") +" @ "+departingFlightData[3] + " w/ "
+                + StringUtilities.getFormattedDate("M/d/yyyy") +" @ "+departingFlightData[3] + " w/ "
                 +departingFlightData[0] + " "+ departingFlightData[1] + " "+ serviceClass +" $"+ departingFlightData[2] +" each";
 
         Assert.assertEquals(actualDepartingFlightMessage, expectedDepartingFlightMessage);
@@ -45,7 +45,7 @@ public class FlightBookingConfirmationPage extends BasePage {
         String actualArrivingFlightMessage = getVisibleElement(By.xpath((txtArrivingFlightInfo))).getText()
                 .replace("\n"," ");
         String expectedArrivingFlightMessage= arrivalCity +" to " + departureCity +" "
-                + StringUtilities.getFormattedDate("M/dd/yyyy") +" @ "+arrivingFlightData[3] + " w/ "
+                + StringUtilities.getFormattedDate("M/d/yyyy") +" @ "+arrivingFlightData[3] + " w/ "
                 +arrivingFlightData[0] + " "+ arrivingFlightData[1] + " "+ serviceClass +" $"+ arrivingFlightData[2] +" each";
 
         Assert.assertEquals(actualArrivingFlightMessage, expectedArrivingFlightMessage);

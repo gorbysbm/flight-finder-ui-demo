@@ -18,6 +18,15 @@ dependencies {
     compile 'com.opencsv:opencsv:4.0'
 }
 
+task prebuild() {
+    doLast {
+        exec {
+            executable "./src/main/resources/localSetupScript.sh"
+        }
+    }
+}
+
+
 clean {
     delete 'out' // clean the output folder from last run
 }
